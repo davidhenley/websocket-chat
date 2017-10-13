@@ -10,5 +10,5 @@ const server = app.listen(4000, () => console.log('Listening on 4000'));
 const io = socket(server);
 
 io.on('connection', (socket) => {
-  console.log('WebSocket is connected');
+  console.log('WebSocket is connected:', socket.id);
 });
