@@ -13,4 +13,13 @@ button.addEventListener('click', () => {
     handle: handle.value,
     message: message.value
   });
+  message.value = '';
+  message.focus();
+});
+
+// Listen for events
+socket.on('chat', ({ handle, message }) => {
+  output.innerHTML += `
+    <p><strong>${handle}: </strong>${message}</p>
+  `;
 });
